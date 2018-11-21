@@ -1,0 +1,17 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dev-packages]
+
+
+[packages]
+cloudant ='~=2.5.0'
+livereload ='*'
+ibmcloudenv ='~=0.0'
+Flask = "==0.11.1"
+gunicorn = "==19.7.1"
+prometheus-client = "*"
