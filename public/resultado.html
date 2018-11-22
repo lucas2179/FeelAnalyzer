@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script>
+	function cor() {
+    	var sc = document.getElementById('score');
+    	if (sc > 0){
+    		document.getElementById('sentimento').className = 'sentverde';
+    		document.getElementById('score').className = 'sentverde';
+    	}
+    	else if(sc < 0 ){
+    		document.getElementById('sentimento').className = 'sentvermelho';
+    		document.getElementById('score').className = 'sentvermelho';
+    	}
+    	else{
+    		document.getElementById('sentimento').className = 'sentneutro';
+    		document.getElementById('score').className = 'sentneutro';
+    	}
+	}
+</script>
+
+<style>
+	.sentverde{
+		color: green;
+		font-size: 24pt;
+	}
+	.sentvermelho{
+		color: red;
+		font-size: 24pt;
+	}
+	.sentneutro{
+		color: blue;
+		font-size: 24pt;
+	}
+</style>
+	<title>resultados</title>
+</head>
+<body onload="cor()">
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Feel Analyzer</a>
+</nav>
+<div class="container">
+<h1> Análise </h1>
+<div class="row">
+
+<p> {{ re[7] }} tweets foram analisados, veja os resultados.</p>
+</div>
+<h1>Emoções</h1>
+<hr>
+
+<div class="table-responsive">
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Fear</th>
+			<th>Disgust</th>
+			<th>Sadness</th>
+			<th>Anger</th>
+			<th>Joy</th>
+		</tr>
+	</thead>
+	<tbody id="dados">
+		<tr>
+		<td id="dado1">{{ re[0] }}</td>
+		<td id="dado2">{{ re[1] }}</td>
+		<td id="dado3">{{ re[2] }}</td>
+		<td id="dado4">{{ re[3] }}</td>
+		<td id="dado5">{{ re[4] }}</td>
+		</tr>
+	</tbody>
+	
+</table>
+
+</div>
+<div class="row">
+ <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12"  align="center">
+<p>The sentiment is: </p>
+<p id="sentimento">{{ re[5] }}</p>
+<br>
+<p id="score">score: {{ re[6] }}</p>
+</div>
+</div>
+          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12"  align="center">
+                <a href ="{{url_for('root')}}"><button class="btn btn-primary" align="center">Nova Consulta</button></a>
+            </div>
+</div>
+<footer class="page-footer font-small bg-dark fixed-bottom">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://www.linkedin.com/in/lucas-souza-38196b156/"> Lucas Souza </a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+</body>
+</html>

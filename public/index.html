@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<title>Feel analyzer</title>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Feel Analyzer</a>
+</nav>
+<div class="container">
+<h1>Feel analyzer</h1>
+<hr>
+<form action="{{ url_for('verifica')}}" method="POST">
+ <div class="form-group">
+      <label for="nome">Palavra:</label>
+      <input type="text" class="form-control" id="nome" placeholder="Enter the word" name="nome">
+ </div>
+<button type="submit" class="btn btn-default">testar</button>
+</form>
+<div class="row">
+	<h3>O que é?</h3>
+	<p>O Feel analyzer é um sistema desenvolvido em Python com o framework Flask, que utiliza os serviços da IBM Cloud  para fazer uma busca no twitter sobre a palavra digitada, e então, através do serviço Natural Language Understand analiza as emoções relacionadas com os tweets e os sentimentos presentes nos mesmos. </p>
+</div>
+<div class="row">
+	<h3>Como utilizar?</h3>
+	<p>Para utilizar, basta digitar o nome ou produto desejado na caixa de texto e clicar no botão para enviar, e então, a análise será feita. OBS: A análise é feita apenas com tweets em inglês, pois o serviço utilizado para analisar emoções ainda não está disponível em português. Então, caso um tweet esteja em outra língua, o sistema irá traduzir, utilizando o Language Translator.</p>
+</div>
+</div>
+<!-- Footer -->
+<footer class="page-footer fixed-bottom font-small bg-dark">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> Lucas Souza </a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
