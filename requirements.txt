@@ -3,4 +3,7 @@ gunicorn==19.7.1
 prometheus-client
 ibmcloudenv
 livereload
-cloudant~=2.5.0
+cloudant ~ = 2.5.0
+watson-cloud-developer
+TwitterSearch
+tweepy
